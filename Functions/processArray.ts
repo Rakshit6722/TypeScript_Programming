@@ -6,4 +6,4 @@ const double = (num: number): number => {
     return num * 2;
 }
 
-console.log(processArray([1, 2, 3, 4, 5], double));
+console.log(processArray([1, 2, 3, 4, 5], double)); 
