@@ -10,7 +10,7 @@ class Cat2 {
     }
 }
 function animalSounds(animal) {
-    if (animal instanceof Dog2) {
+    if (animal instanceof Dog2) { // instanceOf checks if an object is an isntance of a specific class
         animal.bark();
     }
     else if (animal instanceof Cat2) {
