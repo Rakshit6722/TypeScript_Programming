@@ -1,9 +1,9 @@
-type Circle = {
+type Circle2 = {
     type: "Circle",
     radius: number
 }
 
-type Rectangle = {
+type Rectangle2 = {
     type: "Rectangle",
     width: number,
     height: number
@@ -15,9 +15,9 @@ type Triangle = {
     height: number
 }
 
-type Shape = Circle | Rectangle | Triangle
+type Shape2 = Circle2 | Rectangle2 | Triangle
 
-const calculateArea = (shape: Shape): number => {
+const calculateArea = (shape: Shape2): number => {
     switch (shape.type) {
         case "Circle":
             return Math.PI * shape.radius ** 2
@@ -28,12 +28,12 @@ const calculateArea = (shape: Shape): number => {
     }
 }
 
-let circle: Circle = {
+let circle: Circle2 = {
     type: "Circle",
     radius: 10
 }
 
-let rectangle: Rectangle = {
+let rectangle: Rectangle2 = {
     type: "Rectangle",
     width: 10,
     height: 20
