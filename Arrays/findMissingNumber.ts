@@ -4,6 +4,6 @@ const missingNumber = (arr: number[], n: number): number => {
     return total - sum;
 }
 
-let arr: number[] = [1, 2, 3, 4, 6, 7, 8];
+let arr2: number[] = [1, 2, 3, 4, 6, 7, 8];
 let n: number = 8;
-console.log(missingNumber(arr, n)); 
+console.log(missingNumber(arr2, n)); 
