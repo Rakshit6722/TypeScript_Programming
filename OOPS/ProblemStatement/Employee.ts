@@ -1,45 +1,36 @@
-abstract class Employee{
-    private id: number;
-    private name: string;
+class Employee{
+    public name: string;
+    public position: string;
+    public salary: number;
 
-    constructor(id: number, name: string){
-        this.id = id;
+    constructor(name: string, position: string, salary: number){
         this.name = name;
+        this.position = position;
+        this.salary = salary;
     }
 
-    abstract calculateSalary(): number;
-}
-
-class FullTimeEmployee extends Employee{
-
-    private FULL_TIME_PAYMENT = 20000;
-
-    constructor(id: number, name: string, public noOfDays: number){
-        super(id,name)
-        this.noOfDays = noOfDays
+    increaseSalary(amount: number): void{
+        this.salary += amount;
     }
 
-    calculateSalary(): number {
-        return this.noOfDays * this.FULL_TIME_PAYMENT
-    }
-}
-
-class PartTimeEmployee extends Employee{
-
-    private PART_TIME_PAYMENT = 10000;
-
-    constructor(id: number, name: string, public noOfHours: number){
-        super(id,name)
-        this.noOfHours = noOfHours
+    decreasingSalary(amount: number): void{
+        this.salary -= amount;
     }
 
-    calculateSalary(): number {
-        return this.noOfHours * this.PART_TIME_PAYMENT
+    static calculateTotalSalary(employee: Employee[]): number{
+        let totalSalary: number = 0;
+        employee.forEach(emp => {
+            totalSalary += emp.salary;
+        })
+        return totalSalary;
     }
 }
 
-const fullTimeEmployee1 = new FullTimeEmployee(1,"Rakshit",30)
-console.log(fullTimeEmployee1.calculateSalary())
+let emp1 = new Employee("John", "Developer", 50000);
+let emp2 = new Employee("Alice", "Manager", 80000);
+let emp3 = new Employee("Bob", "Tester", 40000);
 
-const partTimeEmployee1 = new PartTimeEmployee(2,"Khattar",30)
-console.log(partTimeEmployee1.calculateSalary())
+emp1.increaseSalary(5000);
+emp2.decreasingSalary(10000);
+
+console.log(Employee.calculateTotalSalary([emp1, emp2, emp3]))
