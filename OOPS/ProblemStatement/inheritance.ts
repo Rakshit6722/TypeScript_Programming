@@ -1,4 +1,4 @@
-class Vehicle {
+class Vehicle12 {
     brand: string;
     speed: number;
     engineStatus: boolean = false;
@@ -16,7 +16,7 @@ class Vehicle {
     }
 }
 
-class Car extends Vehicle {
+class Car21 extends Vehicle12 {
     numberofDoors: number;
     hasSunRoof: boolean;
 
@@ -35,7 +35,7 @@ class Car extends Vehicle {
     }
 }
 
-let car = new Car("Toyota", 100, 4, true);
+let car = new Car21("Toyota", 100, 4, true);
 car.startEngine();
 car.readyToDrive();
 

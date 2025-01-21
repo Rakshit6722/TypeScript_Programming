@@ -1,4 +1,4 @@
-class Book {
+class Book1 {
     constructor(public title: string, public author: string, public availabilityStatus: boolean) {
         this.title = title;
         this.author = author;
@@ -7,20 +7,20 @@ class Book {
 }
 
 class Library {
-    public books: Book[]
+    public books: Book1[]
     constructor() {
         this.books = []
     }
 
-    addBook(book: Book): void {
+    addBook(book: Book1): void {
         this.books.push(book)
     }
 
-    removeBook(book: Book): void {
+    removeBook(book: Book1): void {
         this.books = this.books.filter(b => b.title !== book.title)
     }
 
-    borrow(book: Book): void {
+    borrow(book: Book1): void {
         let bookIndex = -1
         this.books.forEach((b, ind) => {
             if (b.title === book.title) {
@@ -39,7 +39,7 @@ class Library {
         console.log(`Book borrowed: ${book.title}`)
     }
 
-    returnBook(book: Book): void {
+    returnBook(book: Book1): void {
         let bookIndex = -1
         this.books.forEach((b, ind) => {
             if (b.title === book.title) {
@@ -59,20 +59,20 @@ class Library {
     }
 }
 
-let book1 = new Book("The Alchemist", "Paulo Coelho", true)
-let book2 = new Book("The Da Vinci Code", "Dan Brown", true)
-let book3 = new Book("The Monk Who Sold His Ferrari", "Robin Sharma", true)
-let book4 = new Book("The Power of Now", "Eckhart Tolle", false)
+let book12 = new Book1("The Alchemist", "Paulo Coelho", true)
+let book21 = new Book1("The Da Vinci Code", "Dan Brown", true)
+let book3 = new Book1("The Monk Who Sold His Ferrari", "Robin Sharma", true)
+let book4 = new Book1("The Power of Now", "Eckhart Tolle", false)
 
 let library = new Library()
-library.addBook(book1)
-library.addBook(book2)
+library.addBook(book12)
+library.addBook(book21)
 library.addBook(book3)
 library.addBook(book4)
 
 library.borrow(book4)
-library.borrow(book1)
+library.borrow(book12)
 library.borrow(book4)
-library.returnBook(book1)
-library.borrow(book1)
-library.returnBook(book1)
+library.returnBook(book12)
+library.borrow(book12)
+library.returnBook(book12)

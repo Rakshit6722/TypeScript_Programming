@@ -1,4 +1,4 @@
-interface Product{
+interface Product12{
     readonly id: string,
     name: string,
     price: number,
@@ -6,14 +6,14 @@ interface Product{
     inStock: boolean,
 }
 
-const addToCart = (product: Product): Product[] => {
-    let productArr: Product[] = []
+const addToCart = (product: Product12): Product12[] => {
+    let productArr: Product12[] = []
 
     productArr.push(product)
     return productArr
 }
 
-const product1: Product = {
+const product1: Product12 = {
     id: "pro123",
     name: "tufF15",
     price: 50000,

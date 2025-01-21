@@ -12,7 +12,7 @@ class Vehilce {
     }
 }
 
-class Car extends Vehilce{
+class Car2 extends Vehilce{
     public numberOfDoors: number;
 
     constructor(make: number, model: string, numberOfDoors: number){
@@ -25,7 +25,7 @@ class Car extends Vehilce{
     }
 }
 
-const car1 = new Car(2003,"PDN134",4)
+const car1 = new Car2(2003,"PDN134",4)
 car1.start()
 
 
